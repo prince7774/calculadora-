@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Dragon Ball Super</title>
+    <link rel="stylesheet" href="vegeta.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+
+  <!-- INTRO -->
+  <div id="intro">
+    <button id="startBtn">▶ Iniciar</button>
+    <button id="pular">Pular</button>
+
+    <video id="videoIntro">
+      <source src="/img/WhatsApp Video 2026-03-24 at 14.04.42.mp4" type="video/mp4">
+    </video>
+
+    <audio id="musica">
+      <source src="sem musica, devs nao achou" type="audio/mp3">
+    </audio>
+  </div>
+
+  
+
+
+
+    <div class="kame-container">
+        <div class="power-level"> power dragon: <span id="powerLevel">9000+</span></div>
+        
+        <div class="dragon-ball-calculator">
+            <div class="display ki-display">
+                <div class="ki-bar">
+                    <div class="ki-fill" id="kiFill"></div>
+                </div>
+                <input type="text" id="result" readonly>
+                <div class="goku-logo">🐉 DRAGON BALL SUPER</div>
+            </div>
+            
+ <!--_______________________________________________________________________________-->
+
+            <div class="buttons ki-buttons">
+                <button class="btn ki-btn clear-btn" onclick="clearAll()">
+                    <span class="btn-icon">🌑</span> ZERAR
+                </button>
+                <button class="btn ki-btn delete-btn" onclick="deleteLast()">
+                    <span class="btn-icon">⚡</span> KAME
+                </button>
+                <button class="btn ki-btn operator-btn" onclick="appendToDisplay('/')">
+                    <span class="btn-icon">🌕</span> ÷
+                </button>
+                <button class="btn ki-btn operator-btn" onclick="appendToDisplay('*')">
+                    <span class="btn-icon">⭐</span> ×
+                </button>
+                
+                <button class="btn ki-btn number-btn" onclick="appendToDisplay('1')">
+                    <span class="btn-icon">1</span>
+                </button>
+                <button class="btn ki-btn number-btn" onclick="appendToDisplay('2')">
+                    <span class="btn-icon">2</span>
+                </button>
+                <button class="btn ki-btn number-btn" onclick="appendToDisplay('3')">
+                    <span class="btn-icon">3</span>
+                </button>
+                <button class="btn ki-btn operator-btn" onclick="appendToDisplay('-')">
+                    <span class="btn-icon">🐲</span> -
+                </button>
+                
+                <button class="btn ki-btn number-btn" onclick="appendToDisplay('4')">
+                    <span class="btn-icon">4</span>
+                </button>
+                <button class="btn ki-btn number-btn" onclick="appendToDisplay('5')">
+                    <span class="btn-icon">5</span>
+                </button>
+                <button class="btn ki-btn number-btn" onclick="appendToDisplay('6')">
+                    <span class="btn-icon">6</span>
+                </button>
+
+             <!--_______________________________________________________________________________-->    
+                <a href="https://canva.link/2mf3qdmap92lv4p">
+                    <button class="btn ki-btn number-btn" style="width: 65px;   background: linear-gradient(145deg, #04fbff, #ff8800); ">
+                    <span class="btn-icon">🔥</span>
+                </button>
+                </a>                
+            <!--_______________________________________________________________________________-->
+
+                <button class="btn ki-btn number-btn" onclick="appendToDisplay('7')">
+                    <span class="btn-icon">7</span>
+                </button>
+                <button class="btn ki-btn number-btn" onclick="appendToDisplay('8')">
+                    <span class="btn-icon">8</span>
+                </button>
+                <button class="btn ki-btn number-btn" onclick="appendToDisplay('9')">
+                    <span class="btn-icon">9</span>
+                </button>
+                <button class="btn ki-btn operator-btn" onclick="appendToDisplay('+')">
+                    <span class="btn-icon">💥</span> +
+                </button>
+                
+                <button class="btn ki-btn number-btn span-2" onclick="appendToDisplay('0')">
+                    <span class="btn-icon">0</span>
+                </button>
+                           <button class="btn ki-btn number-btn span-2" onclick="appendToDisplay('0')">
+                    <span class="btn-icon">1</span>
+                </button>
+                <button class="btn ki-btn number-btn" onclick="appendToDisplay('.')">
+                    <span class="btn-icon">.</span>
+                </button>
+                <button class="btn ki-btn kamehameha-btn" onclick="calculate()">
+                    <span class="btn-icon">👊</span> =
+                </button>
+            </div>
+            
+
+             <!--_______________________________________________________________________________-->
+            
+        </div>
+    </div>
+    <script src="goku.js"></script>
+</body>
+</html>

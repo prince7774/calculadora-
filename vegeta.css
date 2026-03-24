@@ -1,0 +1,389 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#telanatela{
+    display: none;
+    margin: 20px;
+
+}
+
+body{
+    font-family: 'Orbitron', monospace;
+    animation: gradientShift 15s ease infinite;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    background-image: url(/img/thumb-1920-716813.png);
+}
+ /*___________________________________________________________________________________________________________________________________________________________ */
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+body::before{
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+   
+    background-repeat: repeat;
+    background-size: 200px 100px;
+    animation: kiParticles 20s linear infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+
+
+.kame-container{
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+    text-align: center;
+}
+
+.power-level{
+    color: #fff;
+    font-size: 1.5em;
+    font-weight: 900;
+    text-shadow: 0 0 20px rgb(4, 210, 224), 0 0 40px rgb(0, 0, 255);
+    margin-bottom: 20px;
+    animation: pulse 2s infinite;
+}
+
+
+/* __________________________________________________________________________________________________________________ */
+.dragon-ball-calculator{
+    background: linear-gradient(145deg, #1a1a2e, #16213e);
+    border-radius: 25px;
+    padding: 30px;
+    box-shadow: 
+        0 25px 50px rgba(0,0,0,0.5),
+        inset 0 1px 0 rgba(255,255,255,0.1);
+    max-width: 380px;
+    width: 100%;
+    position: relative;
+    border: 3px solid #ff8c00;
+    box-shadow: 0 0 50px rgba(255, 238, 0, 0.5);
+}
+
+.display{
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.ki-bar{
+    height: 8px;
+    background: #2d3748;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.5);
+}
+
+#kiFill{
+    height: 100%;
+    background: linear-gradient(90deg, #ff4757, #ffa502, #00d2d3);
+    border-radius: 10px;
+    width: 0%;
+    transition: width 0.3s ease;
+    box-shadow: 0 0 20px #00d2d3;
+}
+
+#result{
+    width: 100%;
+    height: 90px;
+    background: linear-gradient(145deg, #ffffff, #1a1a2e);
+    border: 2px solid #ffd700;
+    border-radius: 20px;
+    font-size: 2.8em;
+    font-weight: 700;
+    text-align: right;
+    padding: 0 25px;
+    color: #fff;
+    letter-spacing: 2px;
+    box-shadow: 
+        inset 0 5px 15px rgba(0,0,0,0.5),
+        0 0 30px rgba(255,215,0,0.3);
+    transition: all 0.3s ease;
+}
+
+#result:focus{
+    outline: none;
+    box-shadow: 0 0 40px #ffd700;
+}
+
+.goku-logo{
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(45deg, #ff6b6b, #ffd700);
+    color: #1a1a2e;
+    padding: 5px 20px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: 900;
+    text-shadow: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.buttons{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.btn{
+    height: 75px;
+    border: none;
+    border-radius: 18px;
+    font-size: 1.4em;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+/* __________________________________________________________________________________________________________________ */
+
+#abertura{
+    display: none;
+    margin-top: 20px;
+}
+
+.btn::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    transition: left 0.5s;
+}
+
+.btn:hover::before{
+    left: 100%;
+}
+
+.btn:hover{
+    transform: translateY(-5px) scale(1.05);
+    filter: brightness(1.2);
+}
+
+.btn:active{
+    transform: translateY(-2px) scale(1.02);
+}
+
+.ki-btn{
+    box-shadow: 
+        0 8px 25px rgba(0,0,0,0.4),
+        inset 0 1px 0 rgba(255,255,255,0.2);
+}
+
+
+
+/* __________________________________________________________________________________________________________________ */
+
+
+
+.number-btn{
+    background: linear-gradient(145deg, #667eea, #764ba2);
+}
+
+.number-btn:hover{
+    background: linear-gradient(145deg, #5a67d8, #6b46c1);
+    box-shadow: 0 10px 30px rgba(102,126,234,0.6);
+}
+
+.operator-btn{
+    background: linear-gradient(145deg, #ff6b6b, #ee5a52);
+}
+
+.operator-btn:hover{
+    background: linear-gradient(145deg, #ff5252, #ff4081);
+    box-shadow: 0 10px 30px rgba(255,107,107,0.6);
+}
+
+.kamehameha-btn{
+    background: linear-gradient(145deg, #00d2d3, #11998e);
+    grid-column: span 2;
+    font-size: 1.8em;
+}
+
+.kamehameha-btn:hover{
+    background: linear-gradient(145deg, #00b894, #00cec9);
+    box-shadow: 0 15px 40px rgba(0,210,211,0.8);
+    animation: kamehameha 0.5s ease;
+}
+
+/* ___________________________________________________________________*/
+
+.clear-btn {
+    background: linear-gradient(145deg, #feca57, #ff9ff3);
+}
+
+.clear-btn:hover {
+    background: linear-gradient(145deg, #fdcb6e, #ff7675);
+    box-shadow: 0 10px 30px rgba(254,202,87,0.6);
+}
+
+.delete-btn {
+    background: linear-gradient(145deg, #a55eea, #00e1ff);
+}
+
+.delete-btn:hover {
+    background: linear-gradient(145deg, #9c27b0, #e91e63);
+    box-shadow: 0 10px 30px rgba(165,94,234,0.6);
+}
+
+.span-2{
+    grid-column: span 2;
+}
+
+.btn-icon{
+    display: block;
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+
+/*___________________________________________________________________________________________________________________________________________________________ */
+/* parte das keyframes */
+@keyframes kamehameha{
+    0% { box-shadow: 0 15px 40px rgba(0,210,211,0.8); }
+    50% { box-shadow: 0 0 60px rgba(0,210,211,1); }
+    100% { box-shadow: 0 15px 40px rgba(0,210,211,0.8); }
+}
+
+
+@keyframes pulse{
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+
+
+@keyframes kiParticles{
+    from { transform: translateY(0px) rotate(0deg); }
+    to { transform: translateY(-100px) rotate(360deg); }
+}
+
+
+@keyframes float{
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+
+
+/*___________________________________________________________________________________________________________________________________________________________ */
+
+
+@media (max-width: 480px) {
+    .dragon-ball-calculator {
+        padding: 25px 20px;
+        margin: 10px;
+    }
+    
+    .btn {
+        height: 65px;
+        font-size: 1.2em;
+    }
+    
+    #result {
+        height: 80px;
+        font-size: 2.2em;
+    }
+    
+    .dragon-ball {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+
+/* __________________________________________________________________________________________________________________ */
+
+
+body {
+  margin: 0;
+  overflow: hidden;
+  background-image: url(/img/thumb-1920-716813.png);
+  font-family: Arial, sans-serif;
+}
+
+
+#intro {
+  position: fixed;
+  width: 100vw;
+  height: 115vh;
+ background-image: url(/img/dragon-ball-super-broly-pre-estreia-01.png);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 999;
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+
+
+  
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+}
+
+
+#startBtn {
+  padding: 15px 30px;
+  font-size: 18px;
+  background: linear-gradient( #ff0000 , #00b894);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+
+#pular {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  display: none;
+}
+
+
+#conteudo {
+  display: none;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+/* __________________________________________________________________________________________________________________ */
